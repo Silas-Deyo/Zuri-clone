@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Epilogue:wght@500;700&family=Gideon+Roman&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/font awesome/css/all.css">
+
+</head>
+<body>
+    <header class="main-header d-main-header">
+        <div class="logo">
+            <img src="./images/logo.png" alt="Ingressive for Good and Zuri logo">
+        </div>
+        <div class="login-button d-login-button">
+            <div class="full-screen">
+                <!-- <img src="./images/full-screen.svg" alt=""> -->
+            </div>
+            <button class="login-btn"><a href="#">REGISTER</a></button>
+            <button class="login-btn"><a href="#">LOGIN</a></button>
+        </div>
+    </header>
+    <main class="container welcome-login">
+        <div class="welcome-text">
+            <div class="login-form">
+                <div class="login-text center">
+                    <h2>WELCOME BACK!</h2>
+                    <h4 class="blue-clr">LOGIN HERE</h4>
+                </div>
+                <form class="form-login" id="my-form" action="">
+                    <div class="msg"></div>
+                    <label for="email">Email</label>
+                    <input type="email" class="login-input" id="email">
+                    <label for="password">Password</label>
+                    <input type="password" class="login-input" id="password">
+                    <!-- checkbox -->
+                    <div class="check-box">
+                        <input type="checkbox" class="remember" name="remember" id="check">
+                        <label for="check">Remember me</label>
+                    </div>
+                    <!-- forget password -->
+                    <div class="forgot">
+                        <p><a class="forgot-password" href="#1">Forget your password?</a></p>
+                        <button type="submit" class="login-btn">LOG IN</button>
+                    </div>
+                    <!-- <input type="submit" value="Log In"> -->
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="./loginvalidation.js"></script>
+</body>
+</html>

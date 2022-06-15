@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Epilogue:wght@500;700&family=Gideon+Roman&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/font awesome/css/all.css">
+
+</head>
+<body>
+    <header class="main-header d-main-header">
+        <div class="menu">
+            <div class="hamburger">
+                <img src="./images/icon-menu.svg" alt="">
+            </div>
+            <div class="logo">
+                <img src="./images/logo.png" alt="Ingressive for Good and Zuri logo">
+            </div>
+        </div>
+        <ul class="login-button d-login-button">
+            <li class="full-screen cursor">
+                <!-- <span class="iconify" data-icon="la:expand-arrows-alt"></span> -->
+                <!-- <img src="./images/full-screen.svg" alt=""> -->
+            </li>
+            <li class="cursor app-hover">
+                <span class="iconify" data-icon="la:box"></span>
+                <!-- <img src="./images/archive.svg" alt="archive" class="archive"> -->
+                <ul class="apps">
+                    <li class="settings">
+                        <span class="iconify" data-icon="ci:settings"></span>
+                        <p>Settings</p>
+                    </li>
+                    <li class="app-profile">
+                        <span class="iconify" data-icon="la:user-alt"></span>
+                        <p>Profile</p>
+                    </li>
+                    <li class="docs">
+                        <span class="iconify" data-icon="la:book-open"></span>
+                        <p>Docs</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="cursor notification-hover">
+                <span class="iconify" data-icon="la:bell-solid"></span>
+                <!-- <img src="./images/notifications.svg" alt="notifications"> -->
+                <span class="loading">Loading notifications...</span>
+            </li>
+            <li class="cursor profile-hover">
+                <img src="./images/profile_pics.png" alt="profile picture" class="profile_pics">
+                <ul class="inner-profile">
+                    <li class="name">
+                        <h5>SILAS ADEYO</h5>
+                        <p>Student</p>
+                    </li>
+                    <ul class="li-of-li">
+                        <li class="update">
+                            <span class="iconify" data-icon="la:user-circle"></span>
+                            <span class="update-student-profile">Update Student Profile</span>
+                        </li>
+                        <li class="view">
+                            <span class="iconify" data-icon="la:user-circle"></span>
+                            <span class="view-profile">View Profile</span>
+                        </li>
+                        <li class="change-password">
+                            <span class="iconify" data-icon="fluent:key-32-regular"></span>
+                            <span class="key">Change Password</span>
+                        </li>
+                    </ul>
+                    <li class="logout">
+                        <span class="iconify" data-icon="la:power-off"></span>
+                        <span class="log">Logout</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="flex-container">
+            <nav class="side-nav">
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="./index.html"><span class="iconify" data-icon="ant-design:dashboard-outlined"></span><p>Dashboard</p></a>
+                    </li>
+                    <li class="nav-link user-nav">
+                        <a><span class="iconify" data-icon="la:users"></span><p>user</p></a>
+                    </li>
+                    <li class="nav-link">
+                        <a href=""><span class="iconify" data-icon="la:tasks"></span><p>Tasks</p></a>
+                    </li>
+                    <li class="nav-link">
+                        <a href=""><span class="iconify" data-icon="carbon:document"></span><p>Posts</p></a>
+                    </li>
+                    <!-- teams -->
+                    <li class="teams">
+                        <ul class="team-profile">
+                            <li class="inner-user-profile">
+                                <span class="iconify" data-icon="la:user-alt"></span>
+                                <span>User Profile</span>
+                            </li>
+                            <li class="all-teams">
+                                <span class="iconify" data-icon="la:user-friends"></span>
+                                <span>All Teams</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="welcome-text semantics">
+                <header class="description">
+                    <h2 class="dashboard-h2">
+                        Hello SILAS ADEYO
+                    </h2>
+                    <p class="dashboard-p">Student: <em>1234567890</em></p>
+                </header>
+                <main class="main-grid">
+                    <section class="stage hover1">
+                        <div class="grid-icon">
+                            <span class="iconify blue" data-icon="carbon:skill-level-advanced"></span>
+                            <p>stage</p>
+                        </div>
+                        <p class="blue">0</p>
+                    </section>
+                    <section class="total-stages hover1">
+                        <div class="grid-icon">
+                            <span class="iconify blue" data-icon="la:cubes"></span>
+                            <p>Total Stages</p>
+                        </div>
+                        <p class="blue">10</p>
+                    </section>
+                    <section class="total-points hover1">
+                        <div class="grid-icon">
+                            <span class="iconify blue" data-icon="fluent:desktop-flow-20-regular"></span>
+                            <p>Total Points</p>
+                        </div>
+                        <p class="blue">10 / 10<em>100%</em></p>
+                    </section>
+                    <section class="track-and-course hover1">
+                        <div class="grid-icon">
+                            <span class="iconify blue" data-icon="fluent:desktop-flow-20-regular"></span>
+                            <p>Track and Course</p>
+                        </div>
+                        <p class="blue smaller">2<em>Tracks</em></p>
+                        <p class="blue smaller">2<em>Courses</em></p>
+                    </section>
+
+
+                    <section class="recent-posts">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="less">
+                                        Recent Posts
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="blue">TITLE</th>
+                                    <th class="blue center">CATEGORY</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="blue">PHP RESOURCES WEEK 3</h4>
+                                        <P>Tue 24, May 2022</P>
+                                    </td>
+                                    <td class="center">
+                                        <button>ANNOUNCEMENTS</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="blue">Javascript Introduction Part 2</h4>
+                                        <P>Mon 23, May 2022</P>
+                                    </td>
+                                    <td class="center">
+                                        <button>ANNOUNCEMENTS</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="blue">Design Thinking Slides</h4>
+                                        <P>Thur 19, May 2022</P>
+                                    </td>
+                                    <td class="center">
+                                        <button>ANNOUNCEMENTS</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="blue">Laws of UX - Slides and Resources</h4>
+                                        <P>Thur 19, May 2022</P>
+                                    </td>
+                                    <td class="center">
+                                        <button>CLASS</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="blue">Javascript Introduction</h4>
+                                        <P>Thur 19, May 2022</P>
+                                    </td>
+                                    <td class="center">
+                                        <button>ANNOUNCEMENTS</button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td class="less-bottom">
+                                        <button class="login-btn wide-btn">Show all Posts</button>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+
+                    <section class="latest-tasks">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="6" class="less">Latest Tasks</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th class="blue">COURSE</th>
+                                    <th class="blue">TASK TITLE</th>
+                                    <th class="blue center">TASK POINTS</th>
+                                    <th class="blue">STATUS</th>
+                                    <th class="blue">DEADLINE</th>
+                                    <th class="blue center">...</th>
+                                </tr>
+                                <tr>
+                                    <td>General</td>
+                                    <td>Getting Started</td>
+                                    <td class="center">2</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>General</td>
+                                    <td>Your CV</td>
+                                    <td class="center">1</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>General</td>
+                                    <td>Are you ready?</td>
+                                    <td class="center">1</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>Fullstack</td>
+                                    <td>HTML SEMANTICS</td>
+                                    <td class="center">5</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>Fullstack</td>
+                                    <td>Simple CLI Calculator</td>
+                                    <td class="center">10</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>Fullstack</td>
+                                    <td>Adding Integers</td>
+                                    <td class="center">5</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>Fullstack</td>
+                                    <td>Hello World</td>
+                                    <td class="center">2</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>Fullstack</td>
+                                    <td>Counting Words</td>
+                                    <td class="center">5</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>Fullstack</td>
+                                    <td>Ensuring HTML Semantics</td>
+                                    <td class="center">3</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+                                <tr>
+                                    <td>Fullstack</td>
+                                    <td>HTML</td>
+                                    <td class="center">1</td>
+                                    <td>Submitted</td>
+                                    <td>Submission Closed</td>
+                                    <td class="center">view</td>
+                                </tr>
+
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td class="less-bottom"><button class="login-btn wide-btn">Show all Tasks</button></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+
+                    <section class="courses-enrolled">
+                        <table>
+                            <thead>
+                                <th class="less">Courses Enrolled in</th>
+                            </thead>
+                            <tr>
+                                <th class="blue">COURSE NAME</th>
+                                <th class="blue">DESCRIPTION</th>
+                            </tr>
+                            <tr>
+                                <td>General</td>
+                                <td>General Course for Everyone</td>
+                            </tr>
+                            <tr>
+                                <td class="less-bottom">Fullstack</td>
+                                <td class="less-bottom">Fullstack</td>
+                            </tr>
+                        </table>
+                    </section>
+                </main>
+                <footer>
+                    <p class="copywright">
+                        &copy; 2022 &VerticalLine; POWERED BY ZURI
+                    </p>
+                    <p class="bug-report">
+                        Bug Report
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <script src="./app.js"></script>
+</body>
+</html>

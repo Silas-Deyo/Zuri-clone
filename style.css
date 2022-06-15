@@ -1,0 +1,627 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --botton-bkgrnd-clr:  #e7332b;
+    --main-background: rgba(248, 248, 248, 1);
+    --welcome-text: #555555;
+    --header-shadow: rgba(0, 0, 0, 0.16);
+    --btn-bkgrnd-hover: rgba(12, 50, 82, 1);
+    --blueish-clr: rgba(20, 83, 136, 1);
+    --input-border-focus-clr: rgba(165, 180, 252, 1);
+    --input-border-clr: rgba(221, 221, 221, 1);
+    --input-focus-box-shadow: 0 0px 0px 4px rgba(199, 210, 254, 0.5);
+    --form-login-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.16);
+    --form-border-radius: 10px;
+    --gray-border: rgba(136, 136, 136, 1);
+    --box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.16);
+    --table-border: rgba(238, 238, 238, 1);
+    --main-grid-hover-shadow-wide: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+
+    /* border radius */
+    --border-radius: 0.375rem;
+}
+
+body {
+    padding-top: 0.1px;
+    min-height: 100vh;
+    background-color: var(--main-background);
+}
+
+/* .bg {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.16);
+    z-index: 4000;
+} */
+
+/* header */
+.main-header {
+    background-color: white;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2.5rem;
+    position: fixed;
+    top: 0px;
+    box-shadow: 1px 1px 5px 0 var(--header-shadow);
+    z-index: 30;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.login-button {
+    align-self: stretch;
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.full-screen {
+    background-image: url(./images/full-screen.svg);
+    width: 20px;
+    height: 20px;
+    display: none;
+    margin-bottom: 7px;
+    /* background-position: center; */
+}
+
+.exit-full-screen {
+    background-image: url(./images/exit-full-screen.svg);
+    width: 20px;
+    height: 20px;
+}
+
+.main-header .iconify {
+    font-size: 1.6rem;
+}
+
+.login-btn {
+    padding: .6rem 1.4rem;
+    background-color: var(--botton-bkgrnd-clr);
+    border: transparent;
+    border-radius: 50px;
+    font-weight: 700;
+    color: white;
+}
+
+.login-btn a {
+    color: white;
+    text-decoration: none;
+}
+.login-btn:hover {
+    background-color: var(--btn-bkgrnd-hover);
+}
+
+
+.error {
+    display: block;
+    color: red;
+    background-color: white;
+    /* padding: 5px; */
+    margin-bottom: 5px;
+}
+
+.error-none {
+    display: none;
+}
+
+/* Header hovers */
+
+/* Apps */
+.app-hover {
+    height: 100%;
+    display: flex;
+    align-items: center;    
+}
+ul.apps {
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    /* left: 0; */
+    /* margin-top: 2rem; */
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    transform: translate(-41%) scale(0);
+}
+/* ul.apps::before {
+    content: "\0394";
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    color: rgb(148, 13, 13);
+    background-color: blue;
+} */
+ul.apps li {
+    text-align: center;
+    color: var(--welcome-text);
+}
+ul.apps .iconify {
+    font-size: 2rem;
+}
+.app-hover:hover > ul.apps {
+    transform: translate(-41%) scale(1);
+}
+/* Apps */
+/* notification */
+.notification-hover{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+span.loading {
+    display: none;
+    padding: .5rem 7rem;
+    width: fit-content;
+    font-style: italic;
+    font-size: .9rem;
+    position: absolute;
+    top: 100%;
+    transform: translate(-80%);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+.notification-hover:hover > span.loading {
+    /* transform: translate(-80%) scale(1); */
+    display: block;
+}
+/* notification */
+/* Profile */
+.profile-hover {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+ul.inner-profile {
+    display: none;
+    width: fit-content;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    transform: translate(-80%);
+}
+ul.inner-profile ul li, ul.inner-profile .logout {
+    /* background-color: #e7332b; */
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+ul.inner-profile ul {
+    border-block: 1px solid var(--table-border);
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+ul.inner-profile .name, ul.inner-profile .logout {
+    /* background-color: #e7332b; */
+    padding: 1rem 1.5rem;
+}
+.profile-hover:hover > ul.inner-profile {
+    display: block;
+}
+/* Profile */
+
+/* Header hovers */
+
+/* main container */
+.container {
+    margin: 5rem 5rem 0;
+    padding: 2.5rem 1rem;
+    height: calc(100vh - 5rem);
+    display: grid;
+    place-content: center;
+}
+
+.welcome-text {
+    color: var(--welcome-text);
+}
+h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+}
+p {
+    font-size: 0.875rem;
+}
+
+
+/* main container for login and welcome page only */
+.welcome-login {
+    margin-inline: 0;
+}
+/* main container for login and welcome page only */
+
+
+/* login page */
+.blue-clr {
+    color: var(--blueish-clr);
+}
+.center{
+    text-align: center;
+}
+.login-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+.login-form{
+    display: grid;
+    place-items: center;
+}
+.form-login {
+    padding: 2.5rem;
+    width: min(448px, 90%);
+    margin-top: 1.3rem;
+    border: 1px solid;
+    background-color: white;
+    border: transparent;
+    border-radius: var(--form-border-radius);
+    box-shadow: var(--form-login-shadow);
+}
+.login-input {
+    width: 100%;
+    padding: .75rem;
+    margin-bottom: .6rem;
+    border: 1px solid var(--input-border-clr);
+    border-radius: var(--border-radius);
+}
+.login-input:focus {
+    /* border: 1px solid rgba(59, 130, 246, 0.5); */
+    border: none;
+    outline: 1px solid rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0px 0px 4px rgba(199, 210, 254, 0.5);
+}
+.form-login label {
+    font-size: 0.875rem;
+    line-height: 2rem;
+}
+.check-box {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.forgot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+
+}
+a.forgot-password {
+    color: var(--welcome-text);
+}
+em {
+    font-style: normal;
+}
+
+
+/* Dashboard */
+.menu {
+    display: flex;
+    gap: 1.2rem;
+}
+.login-button{
+    align-items: center;
+}
+li {
+    list-style-type: none;
+}
+/* .login-button li img {
+    width: 18px;
+} */
+.login-button li:last-child img {
+    width: 48px;
+    height: 50px;
+    border: 2px solid var(--gray-border);
+    border-radius: 100px;
+}
+ion-icon {
+    /* width: 208px; */
+    font-size: 2rem;
+}
+ion-icon:hover, .iconify:hover, .fa-solid:hover {
+    color: var(--blueish-clr);
+    
+}
+
+/* Dashboard --> container Div */
+div.container {
+    place-content: normal;
+    margin-inline: 0;
+    padding-inline: 0;
+}
+/* Dashboard --> container Div */
+ 
+/* Dashboard --> flex-container Div */
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+/* flex-container Div */
+
+
+.semantics {
+    flex: 1;
+    padding: 2.5rem;
+}
+.description {
+    margin-bottom: 2rem;
+}
+.main-grid {
+    display: grid;
+    gap: 2rem;
+}
+.main-grid section {
+    background-color: white;
+}
+
+/* Table */
+table {
+    width: 100%;
+}
+td, th {
+    text-align: left;
+}
+td button {
+    background-color: transparent;
+    padding: .2rem 1rem;
+    border: 1px solid;
+    border-radius: 50px;
+}
+.center {
+    text-align: center;
+}
+table td, table th {
+    padding: 1rem 0.5rem;
+}
+table, td, th {
+    border: 1px solid var(--table-border);
+    border-collapse: collapse;
+    border-top: transparent;
+    border-inline: transparent;
+}
+tbody tr:last-child td {
+    border: transparent;
+}
+table {
+    border-bottom: transparent;
+}
+th {
+    border-bottom: 1px solid var(--table-border);
+}
+thead th, tfoot td {
+    border: transparent;
+}
+.courses-enrolled tr:last-child td {
+    border-bottom: transparent;
+}
+.less {
+    padding-top: 0;
+}
+.less-bottom {
+    padding-bottom: 0;
+}
+.less-bottom button.wide-btn {
+    width: max-content;
+}
+.latest-tasks, .recent-posts {
+    overflow-x: scroll;
+}
+
+
+/* Table */
+
+/* top boxes */
+.main-grid section {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+.hover1:hover{
+    box-shadow: var(--main-grid-hover-shadow-wide);
+}
+.main-grid .iconify {
+    font-size: 3rem;
+    margin-bottom: .6rem;
+}
+.main-grid .grid-icon {
+    margin-bottom: 1.5rem;
+    
+}
+.blue {
+    color: var(--blueish-clr);
+}
+.main-grid section > p {
+    font-size: 1.875rem;
+}
+.main-grid section > .smaller {
+    font-size: 1.25rem;
+}
+.main-grid section em {
+    color: var(--welcome-text);
+    font-size: .75rem;
+    line-height: 1rem;
+    font-style: normal;
+    margin-left: .45rem;
+}
+/* side navigation */
+.side-nav {
+    /* display: block; */
+    position: sticky;
+    height: calc(100vh - 5rem);
+    width: fit-content;
+    background-color: white;
+    top: 5rem;
+    box-shadow: var(--box-shadow);
+    /* z-index: ; */
+}
+.nav-links .nav-link {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+.nav-links .nav-link a {
+    color: var(--welcome-text);
+    text-decoration: none;
+}
+.nav-links .nav-link a .iconify {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.active {
+    /* left: 20vw; */
+    display: none;
+}
+.side-nav:hover {
+    color: var(--blueish-clr);
+}
+
+/* side navigation -> user */
+.teams {
+    display: none;
+    position: absolute;
+    padding: 1.8rem;
+    /* z-index: -999; */
+    /* border-left: 1px solid var(--header-shadow); */
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    width: 220px;
+    line-height: 2.5rem;
+    color: var(--welcome-text);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.16);
+}
+.teams::before {
+    content: "";
+    position: absolute;
+    /* background-color: blue; */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    box-shadow: inset 2px 0px 3px 0px rgba(0, 0, 0, 0.16);
+}
+.active-team {
+    display: block;
+}
+.teams li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.teams .iconify {
+    font-size: 1.5rem;
+}
+/* side navigation -> user */
+
+/* side navigation */
+
+div.container {
+    padding-top: 0;
+}
+
+
+
+/* .total-stages {
+    padding: 4rem;
+    border: 1px solid;
+    width: 500px;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.total-stages:hover {
+    transform: scale(1.5);
+} */
+
+
+
+
+
+footer {
+    padding-top: 1rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--welcome-text);
+}
+
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+    .full-screen {
+        display: block;
+    }
+    .main-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .recent-posts, .latest-tasks {
+        grid-column: span 2;
+    }
+    .courses-enrolled {
+        grid-column: span 4;
+    }
+    .hover1:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .teams {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .side-nav {
+        /* display: block; */
+        /* position: sticky; */
+        /* position: absolute; */
+        position: fixed;
+        height: calc(100vh - 5rem);
+        /* height: 100vh; */
+        width: fit-content;
+        background-color: white;
+        top: 5rem;
+        box-shadow: var(--box-shadow);
+        /* z-index: ; */
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .d-main-header {
+        padding-inline: 1rem;
+    }
+    .d-login-button {
+        gap: .7rem;
+    }
+    span.loading {
+        padding-inline: 2rem;
+    }
+}
